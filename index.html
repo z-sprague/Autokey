@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<tag autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>Autokey Solver</title>
+
+<!-- CSS -->
+<link href="style.css" rel="stylesheet">
+
+<!-- Javascript Code-->
+<script src="autokey.js"></script>
+
+</head>
+<body>
+
+<div class="label">
+	<h1>Autokey Solver</h1>
+</div>
+
+<div class="plain">
+	<ul class="ioText" style="list-style-type:none;">
+		<li><label class="textLabel" id="pLbl"><b>Plaintext</b></label><li>
+		<li><textarea class="textarea" id="pText" placeholder="Error: Enter plaintext!"></textarea><li>
+	</ul>
+</div>
+<div class="tools">
+	<ul class="ioText" style="list-style-type:none;">
+		<li><label class="textLabel" id="kLbl"><b>Keyword</b></label></li>
+		<li><input type="text" autocomplete="off" class="textarea" id="keyword"></li>
+		<li><button type="button" class="solveBtns" id="encipher" onclick="encipher_Clicked()">↓↓ Encipher ↓↓</button>
+				<button button="button" class="solveBtns" id="decipher" onclick="decipher_Clicked()">↑↑ Decipher ↑↑</button></li>
+		<li><label class="textLabel" id="eLbl"><b>Extend By:</b></label></li>
+		<li><form><input type="radio" name="radio" class="radioBtns" id="radioPlain" checked>Plaintext</input>
+				<input type="radio" class="radioBtns" name="radio" id="radioCrypt">Ciphertext</input></form></li>
+		<li><button type="button" class="solveBtns" id="clear" onclick="clear_Clicked()">Clear</button></li>
+	</ul>
+</div>
+	<div class="crypt">
+	<ul class="ioText" style="list-style-type:none;">
+		<li><label class="textLabel" id="cLbl"><b>Ciphertext</b></label></li>
+		<li><textarea class="textarea" id="cText"></textarea></li>
+	</ul>
+</div>
+
+</body>
+
+<footer>
+	<p>Copyright &copy Zack Sprague 2019</p>
+</footer>
+
+</html>

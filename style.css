@@ -1,0 +1,77 @@
+
+body {
+	background-color: #24252A;
+	color: white;
+	text-align: center;
+}
+
+button {
+	display: inline-block;
+	padding: 0.35em 1.2em;
+	border: 0.1em solid #FFFFFF;
+	margin: 0 0.3em 0.3em 0;
+	border-radius: 50px;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Roboto',sans-serif;
+	font-weight: 400;
+	color: #FFFFFF;
+	text-align: center;
+	transition: all 0.2s;
+	background-color: transparent;
+}
+
+button:hover {
+	color: #000000;
+	background-color: #0088A9;
+	outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+button:focus, button:active {
+	outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+body #pText, #cText {
+	background-color: white;
+	width: 60em;
+	height: 14em;
+}
+
+body .ioText {
+	padding: 5px;
+}
+
+body .ioText li {
+	padding: 5px;
+}
+
+body #keyword {
+	width: 17em;
+}
+
+body #clear {
+	width: 19em;
+}
+
+body .textarea {
+	border-radius: 10px;
+	border: none;
+	box-sizing: border-box;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+body .textarea:focus {
+	outline: 0px !important;
+	-webkit-appearance: none;
+	box-shadow: none !important;
+}
+
+body #pLbl, #kLbl, #eLbl ,#cLbl {
+	font-size: 20px;
+	font-weight: bold;
+}
