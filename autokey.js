@@ -39,21 +39,21 @@ function encipher_Clicked(){
 
 	/* Error checking for empty input fields */
 
-		if (document.getElementById("radioPlain").checked){
-			var cryptText = extendPlain_encipher(keyword, input);
-			cryptText = output(cryptText);
-			cText.value = cryptText;
-		}
-		else{
-			var cryptText = extendCrypt_encipher(key, input);
-			cryptText = output(cryptText);
-			cText.value = cryptText;
-		}
+	if (document.getElementById("radioPlain").checked){
+		var cryptText = extendPlain_encipher(keyword, input);
+		cryptText = output(cryptText);
+		cText.value = cryptText;
+	}
+	else{
+		var cryptText = extendCrypt_encipher(key, input);
+		cryptText = output(cryptText);
+		cText.value = cryptText;
+	}
 }
 
 function extendPlain_encipher(keyword, plainText){
 	var len = plainText.length;
-  var cryptText = "";
+	var cryptText = "";
 
 	for (var i = 0; i < len; i++){
 		var keyLetter = keyword.charCodeAt(i);
