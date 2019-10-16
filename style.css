@@ -51,6 +51,7 @@ body .ioText li {
 
 body #keyword {
 	width: 17em;
+	padding-left: 5px;
 }
 
 body #clear {
