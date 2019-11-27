@@ -85,7 +85,7 @@ function decipher_Clicked(){
 	var cText = document.getElementById("cText").value.replace(/[^A-Za-z]+/g, "").toUpperCase();
 	var key = document.getElementById("keyword").value.replace(/[^A-Za-z]+/g, "").toUpperCase();
 
-	if (cText.length > 0) {
+	if (cText.length > 0 && key.length > 0) {
 		document.getElementById("errorMsg").textContent = "";
 		if (document.getElementById("radioPlain").checked){
 			var plainText = extendPlain_decipher(key, cText);
@@ -97,6 +97,9 @@ function decipher_Clicked(){
 			plainText = output(plainText);
 			pText.value = plainText.toLowerCase();
 		}
+	}
+	else if (cText.length > 0 && key.length == 0) {
+		document.getElementById("errorMsg").textContent = 'Error - Expected Input for Keyword!';
 	}
 	else {
 		document.getElementById("errorMsg").textContent = 'Error - Expected Input for Ciphertext!';
