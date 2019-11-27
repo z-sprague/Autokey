@@ -19,10 +19,10 @@
 </head>
 <body>
 
-<div class="label">
+<div class="name">
 	<h1>Autokey Solver</h1>
 </div>
-
+<label class="errorMsg" id="errorMsg"></label>
 <div class="plain">
 	<ul class="ioText" style="list-style-type:none;">
 		<li><label class="textLabel" id="pLbl"><b>Plaintext</b></label><li>
@@ -33,12 +33,12 @@
 	<ul class="ioText" style="list-style-type:none;">
 		<li><label class="textLabel" id="kLbl"><b>Keyword</b></label></li>
 		<li><input type="text" autocomplete="off" class="textarea" id="keyword"></li>
-		<li><button type="button" class="solveBtns" id="encipher" onclick="encipher_Clicked()">↓↓ Encipher ↓↓</button>
-				<button button="button" class="solveBtns" id="decipher" onclick="decipher_Clicked()">↑↑ Decipher ↑↑</button></li>
 		<li><label class="textLabel" id="eLbl"><b>Extend By:</b></label></li>
 		<li><input type="radio" name="radio" class="radioBtns" id="radioPlain" checked>Plaintext</input>
 				<input type="radio" class="radioBtns" name="radio" id="radioCrypt">Ciphertext</input></li>
-		<li><button type="button" class="solveBtns" id="clear" onclick="clear_Clicked()">Clear</button></li>
+				<li><button type="button" class="solveBtns" id="encipher" onclick="encipher_Clicked()">↓↓ Encipher ↓↓</button>
+				<button button="button" class="solveBtns" id="decipher" onclick="decipher_Clicked()">↑↑ Decipher ↑↑</button></li>
+				<li><button type="button" class="solveBtns" id="clear" onclick="clear_Clicked()">Clear</button></li>
 	</ul>
 </div>
 	<div class="crypt">

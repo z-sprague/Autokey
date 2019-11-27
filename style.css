@@ -38,7 +38,7 @@ button:focus, button:active {
 body #pText, #cText {
 	background-color: white;
 	width: 60em;
-	height: 14em;
+	height: 13em;
 }
 
 body .ioText {
@@ -75,4 +75,8 @@ body .textarea:focus {
 body #pLbl, #kLbl, #eLbl ,#cLbl {
 	font-size: 20px;
 	font-weight: bold;
+}
+
+body .errorMsg {
+	color: #ff726f;
 }

@@ -30,7 +30,8 @@ function encipher_Clicked(){
 	var keyword = key + input;
 
 	/* Error checking for empty input fields */
-
+	if (input.length > 0 && key.length > 0) {
+		document.getElementById("errorMsg").textContent = "";
 		if (document.getElementById("radioPlain").checked){
 			var cryptText = extendPlain_encipher(keyword, input);
 			cryptText = output(cryptText);
@@ -41,6 +42,12 @@ function encipher_Clicked(){
 			cryptText = output(cryptText);
 			cText.value = cryptText;
 		}
+	}
+	else if (input.length > 0 && key.length == 0) {
+		document.getElementById("errorMsg").textContent = 'Error - Expected Input for Keyword!';
+	}
+	else
+		document.getElementById("errorMsg").textContent = 'Error - Expected Input for Plaintext!';
 }
 
 function extendPlain_encipher(keyword, plainText){
@@ -78,15 +85,21 @@ function decipher_Clicked(){
 	var cText = document.getElementById("cText").value.replace(/[^A-Za-z]+/g, "").toUpperCase();
 	var key = document.getElementById("keyword").value.replace(/[^A-Za-z]+/g, "").toUpperCase();
 
-	if (document.getElementById("radioPlain").checked){
-		var plainText = extendPlain_decipher(key, cText);
-		plainText = output(plainText);
-		pText.value = plainText.toLowerCase();
+	if (cText.length > 0) {
+		document.getElementById("errorMsg").textContent = "";
+		if (document.getElementById("radioPlain").checked){
+			var plainText = extendPlain_decipher(key, cText);
+			plainText = output(plainText);
+			pText.value = plainText.toLowerCase();
+		}
+		else{
+			var plainText = extendCrypt_decipher(key, cText);
+			plainText = output(plainText);
+			pText.value = plainText.toLowerCase();
+		}
 	}
-	else{
-		var plainText = extendCrypt_decipher(key, cText);
-		plainText = output(plainText);
-		pText.value = plainText.toLowerCase();
+	else {
+		document.getElementById("errorMsg").textContent = 'Error - Expected Input for Ciphertext!';
 	}
 }
 
@@ -113,7 +126,7 @@ function extendCrypt_decipher(key, cText){
 	var keyword = key + cText;
 	var plainMsg = "";
 	var current = key;
-	
+
 	for (var i = 0; i < len; i++){
 		var keyLetter = alpha.indexOf(keyword.charAt(i));
 		var cryptLet = alpha.indexOf(cText.charAt(i));
@@ -123,7 +136,7 @@ function extendCrypt_decipher(key, cText){
 		current += alpha.charAt(total);
 	}
 	return plainMsg;
-	
+
 }
 
 /*
@@ -137,6 +150,7 @@ function clear_Clicked(){
     document.getElementById("keyword").value = "";
     document.getElementById("pText").value = "";
     document.getElementById("cText").value = "";
+		document.getElementById("errorMsg").textContent = "";
 }
 
 /* Output text in 5-letter blocks */
