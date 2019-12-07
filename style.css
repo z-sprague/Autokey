@@ -1,4 +1,9 @@
 
+.wrapper {
+	width: 100%;
+	height: auto;
+}
+
 body {
 	background-color: #24252A;
 	color: white;
